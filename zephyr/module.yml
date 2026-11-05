@@ -1,0 +1,4 @@
+name: sofle-host-status
+build:
+  cmake: host-status
+  kconfig: host-status/Kconfig

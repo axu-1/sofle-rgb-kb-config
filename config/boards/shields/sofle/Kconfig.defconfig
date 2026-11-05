@@ -24,6 +24,17 @@ config I2C
 config SSD1306
     default y
 
+if SSD1306
+
+config SSD1306_DEFAULT_CONTRAST
+    default 32
+
+endif
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN
+endchoice
+
 endif # ZMK_DISPLAY
 
 if LVGL
@@ -50,4 +61,3 @@ config WS2812_STRIP
 endif
 
 endif
-

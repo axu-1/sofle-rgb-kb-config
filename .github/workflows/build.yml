@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - "config/**"
+      - "host-status/**"
+      - "zephyr/module.yml"
+      - "build.yaml"
+      - ".github/workflows/build.yml"
 
 jobs:
   build:

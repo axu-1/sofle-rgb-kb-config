@@ -1,0 +1,11 @@
+config ZMK_HOST_STATUS
+    bool "Read-only Bluetooth status for the laptop viewer"
+    depends on ZMK_BLE
+    depends on !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
+    default y
+    select ZMK_HID_INDICATORS
+    select ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING if ZMK_SPLIT_BLE
+    help
+      Reports actual active layer, batteries, output, Bluetooth profile and
+      lock indicators to the active paired host over an encrypted GATT service.
+      Does not change key bindings or require an OLED.
